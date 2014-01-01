@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>Test test test</title>
+		<meta charset="utf-8">
+
+		<style type="text/css">
+			body {
+				background-color: #000000;
+				margin: 0px;
+				overflow: hidden;
+			}
+		</style>
+		
+	</head>
+	<body>
+    
+        <canvas id="theCanvas" width="768" height="768" >
+        </canvas> 
+
+		<script>
+
+        var canvas = document.getElementById("theCanvas")
+        var ctx = canvas.getContext("2d");
+        var dx = 0;
+        var _x = 0;
+        var dy = 0;
+        var dr = 0;
+        var timer;
+        var numCircles = 80;
+        var amplitude = 100;
+        var frequency = 0.06;
+        var shiftStartingAngle = 0;
+        var shiftWaveY = 400;
+
+        var startX = 50;
+        var startY = 50;
+        var circleArray = new Array();
+        var theta = 0.0;
+        
+        function Circle(x,y,r,d,s){
+          this.x=x; 
+          this.y=y;
+          this.r=r;
+        }        
+        
+         function init() {
+            // Setup canvas
+            canvas = document.getElementById("theCanvas")
+            ctx = canvas.getContext("2d");
+            
+            // procedural init of circle array
+            for(var i=0;i < numCircles;i++)
+            {
+                circleArray[i] = new Circle(startX+(i*2), startY, 5);
+            }
+            
+            //dx = ((Math.PI*2));
+            
+            // call draw function every 10 msecs
+            timer = setInterval(draw, 10);
+            return timer;
+         }
+         
+          function drawBall(c) {
+            ctx.beginPath();
+            ctx.shadowBlur = 15;
+            ctx.shadowColor = "#ffffff";
+            ctx.globalAlpha = 0.8;
+            ctx.arc(c.x, c.y, c.r, 0, Math.PI*2, true);
+            ctx.closePath();
+            ctx.fill();
+        }
+        
+        function adjustCircle(c) {
+             if (c.x >= canvas.width) c.x = 5;
+            else c.x += 0.5;
+
+            c.y = (amplitude * (Math.sin(frequency * c.x) + shiftStartingAngle)) + shiftWaveY;
+
+         }
+         
+         function draw() {
+            ctx.clearRect(0,0, canvas.width, canvas.height);
+            ctx.fillStyle = "white"
+
+            for(var i=0;i < numCircles;i++)
+            {
+                adjustCircle(circleArray[i]);
+                drawBall(circleArray[i]);
+            }
+        }
+        
+        init();
+                        
+		</script>
+        
+        <a href="index.html">BACK BACK BACK!</a>
+
+	</body>
+</html>
