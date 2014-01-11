@@ -23,7 +23,7 @@ function bar(options) {
 	return that;
 }
 
-var gradient = ['rgba(79,79,79,1.0)','rgba(123,123,123,1.0)','rgba(167,167,167,1.0)','rgba(211,211,211,1.0)','rgba(255,255,255,1.0)','rgba(255,255,255,1.0)','rgba(211,211,211,1.0)','rgba(167,167,167,1.0)','rgba(123,123,123,1.0)','rgba(79,79,79,1.0)'];
+var gradient = ['rgba(79,79,79,1)','rgba(123,123,123,1)','rgba(167,167,167,1)','rgba(211,211,211,1)','rgba(255,255,255,1)','rgba(255,255,255,1)','rgba(211,211,211,1)','rgba(167,167,167,1)','rgba(123,123,123,1)','rgba(79,79,79,1)'];
 
 function reinitCharArray() {
 	// create message character tracking array

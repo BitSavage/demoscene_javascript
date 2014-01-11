@@ -6,7 +6,7 @@ var timer;
 var music = new Audio("ReadySteadyGo.mp3");
 var eyeImage = new Image();
 
-var message = "Welcome to BitSavage --- This is a simple sine wave side scroller with oscillating amplitude + pulsating coolbar I made using html5 and JavaScript. Music is Ready Steady Go by She. . . What's next?";
+var message = "Welcome to BitSavage --- This is a simple sine wave side scroller with oscillating amplitude + pulsating rasterbar I made using html5 and JavaScript. Music is Ready Steady Go by She. . . What's next?";
 var fontSheetImage = new Image();
 var spriteArray = new Array();
 var charArray = new Array();
