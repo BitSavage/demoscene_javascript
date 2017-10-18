@@ -1,5 +1,6 @@
-Demoscene Javascript
-===========
+# Demoscene Javascript
+
+## Not Maintained
 
 A simple attempt at replicating different "old school" demoscene effects in JavaScript.
 
